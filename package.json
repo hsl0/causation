@@ -1,0 +1,40 @@
+{
+  "name": "causation",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "author": "hsl0",
+  "type": "module",
+  "types": "types/main.d.ts",
+  "main": "dist/main.js",
+  "browser": "dist/main.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./types/main.d.ts"
+    },
+    "./min": {
+      "import": "./dist/main.min.js",
+      "types": "./types/main.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run typecheck && vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc && rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^1.0.2",
+    "rollup": "^4.65.1",
+    "rollup-plugin-sourcemaps2": "^0.5.10",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
